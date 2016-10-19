@@ -14,7 +14,10 @@
     = f.text_field :space_id, placeholder: 'Your Contentful Space ID', class: 'form-control'
   .input-group
     = f.label :access_token
-    = f.text_field :access_token, placeholder: 'Your Production Delivery API Token', class: 'form-control'
+    = f.text_field :access_token, placeholder: 'Your API Token', class: 'form-control'
+  .input-group
+    = f.label :preview
+    = f.check_box :preview, placeholder: 'Preview Environment', class: 'form-control'
   .input-group
     = f.label :content_type
     = f.text_field :content_type, placeholder: 'Your Product Content Type ID', class: 'form-control'

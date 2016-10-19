@@ -69,6 +69,6 @@ class ContentfulUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contentful_user_params
-      params.require(:contentful_user).permit(:name, :space_id, :access_token, :content_type)
+      params.require(:contentful_user).permit(:name, :space_id, :access_token, :content_type, :preview)
     end
 end
