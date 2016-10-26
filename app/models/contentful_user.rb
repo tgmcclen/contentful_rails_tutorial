@@ -1,14 +1,16 @@
 class ContentfulUser < ActiveRecord::Base
   # Gets all entries and it's links for defined Content Type in Configuration
   def render
-    client.entries(include: 2, content_type: content_type, order: 'fields.slug')
+    client.entries(content_type: content_type, order: 'fields.slug')
+  end
+
+  def product(slug)
+    client.entries(content_type: client.content_types.detect {|c| c.name == 'Product' }.id, 'fields.slug': slug).first
   end
 
   def complete?
     name? && space_id? && access_token? && content_type?
   end
-
-  private
 
   # Creates a Contentful Client Instance
   def client
